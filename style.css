@@ -1,0 +1,452 @@
+*, *::after, *::before {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+   transition: .15s;
+}
+
+button {
+   cursor: pointer;
+   user-select: none;
+}
+
+/* Fonts */
+
+h1, h2, h3, h4 {
+   color: var(--white);
+}
+
+h1 {
+   font: 400 3rem 'Bebas Neue';
+}
+
+h2 {
+   font: 400 1.875rem 'Bebas Neue';
+}
+
+h3 {
+   font: 400 1.25rem 'DM Mono';
+}
+
+h4 {
+   font: 400 0.875rem 'DM Mono';
+}
+
+body {
+   display: grid;
+
+   grid-template-rows: 25vh 50vh 25vh;
+}
+
+/* Colors */
+
+body {
+   background: var(--darker);
+}
+
+#create {
+   background: var(--dark);
+   border-right: 5px solid var(--fi);
+}
+
+/* Create */
+
+#create {
+   width: 22%;
+
+   position: fixed;
+   top: 0;
+   bottom: 0;
+   left: 0;
+
+   padding: 15.75rem 1.25rem 13.62rem;
+
+   display: flex;
+   flex-direction: column;
+
+   z-index: 10;
+
+   transform: translateX(-95%);
+
+   transition: .5s;
+}
+
+#create hr {
+   border-color: var(--fi);
+   margin-bottom: 1.25rem;
+}
+
+#create h2 {
+   margin-bottom: .63rem;
+}
+
+#create h2 + input[type="text"] {
+   width: 100%;
+   height: 3.4375rem;
+
+   padding: .9rem .3rem;
+
+   font: 400 1.25rem 'DM Mono';
+   color: var(--darker);
+
+   background: var(--white);
+   border: none;
+
+   margin-bottom: 2.5rem;
+}
+
+#create h2 + input[type="text"]::placeholder {
+   color: var(--dark);
+}
+
+#create > div {
+   display: flex;
+   justify-content: stretch;
+   gap: 0.87rem;
+   
+   width: 100%;
+   height: auto;
+}
+
+/* Color Input */
+
+input[type="color"] {
+   width: 6.25rem;
+   height: 6.25rem;
+   border: none;
+
+   cursor: pointer;
+}
+
+input[type="color"]::-webkit-color-swatch-wrapper {
+   padding: 0;
+}
+ 
+input[type="color"]::-webkit-color-swatch {
+   border: none;
+}
+
+/* Color Input Text */
+
+div > h3 {
+   margin-bottom: .44rem;
+}
+
+div > h4 {
+   margin-bottom: .31rem;
+}
+
+h4 + input {
+   width: 6rem;
+   height: 2.75rem;
+   
+   padding: .56rem .31rem;
+
+   font: 400 1.25rem 'DM Mono';
+   color: var(--dark);
+
+   background: var(--white);
+   border: none;
+}
+
+/* Create Column Button */
+
+#create .submit {
+   margin-top: 7.31rem;
+   place-self: center;
+
+   width: auto;
+   height: auto;
+
+   padding: .44rem 1.1rem .25rem;
+
+   font: 400 3rem 'Bebas Neue';
+   color: var(--dark);
+   
+   background: var(--se);
+   border: none; 
+}
+
+#create .afterelement {
+   width: 3rem;
+   aspect-ratio: 1;
+
+   position: absolute;
+   right: -1.6rem;
+   top: 50%;
+
+   border: none;
+   border-radius: 100%;
+}
+
+#create .afterelement svg {
+   display: flex;
+
+   place-content: center;
+   width: 100%;
+   height: 100%;
+}
+
+/*  */
+/*  */
+/*  */
+
+#columns {
+   grid-row: 2;
+
+   display: flex;
+   flex-wrap: nowrap;
+
+   overflow-x: scroll;
+   padding-left: 48rem;
+   padding-right: 10rem;
+
+   gap: 2rem;
+}
+
+#columns::-webkit-scrollbar {
+   display: none;
+}
+
+.column {
+   aspect-ratio: .78;
+
+   display: grid;
+   grid-template-rows: 2.87rem .625rem calc(100% - 3.495rem);
+   grid-template-columns: calc(100% - 2.385rem) 2.385rem;
+
+   background: var(--dark);
+}
+
+.column > h2 {
+   padding-left: .63rem;
+   padding-top: .55rem;
+}
+
+.column > a {
+   height: 100%;
+
+   display: flex;
+
+   cursor: pointer;
+   user-select: none;
+}
+
+.column a > svg {
+   place-self: center;
+}
+
+.column > hr {
+   grid-column: span 2;
+
+   background: #fe43e3;
+   border: none;
+}
+
+.column > .tasks {
+   margin: 0 .5rem .5rem;
+   padding: .25rem;
+   grid-column: span 2;
+
+   position: relative;
+
+   background: var(--darker);
+}
+
+.tasks > button {
+   height: auto;
+
+   background: var(--se);
+   border: none;
+
+   font: 400 1.875rem 'Bebas Neue';
+   color: var(--darker);
+
+   position: absolute;
+   bottom: .25rem;
+   right: .25rem;
+   left: .25rem;
+}
+
+.tasks > div {
+   display: flex;
+   flex-direction: column;
+
+   height: calc(100% - 3rem);
+
+   row-gap: .31rem;
+   overflow-y: scroll;
+}
+
+.tasks > div::-webkit-scrollbar {
+   display: none;
+}
+
+/* Task Style */
+
+.task {
+   height: 3.5625rem;
+   display: flex;
+   justify-content: stretch;
+   gap: .31rem;
+
+   padding: .65rem .5rem;
+
+   background: var(--white);
+}
+
+.task h2 {
+   color: var(--darker);
+   width: 100%;
+}
+
+.task button {
+   width: 1.625rem;
+
+   background: none;
+   border: none;
+}
+
+.task button > hr {
+   height: 3px;
+
+   background: var(--darker);
+   border: none;
+}
+
+/* Task Create */
+
+#task-create {
+   width: 25rem;
+   height: auto;
+
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+
+   padding: .5rem;
+
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: .5rem;
+
+   background: var(--dark);
+
+   z-index: 15;
+}
+
+#task-create h1 {
+   place-self: start;
+}
+
+#task-create input {
+   width: 100%;
+   height: 3.4375rem;
+
+   padding: .9rem .3rem;
+
+   font: 400 1.25rem 'DM Mono';
+   color: var(--darker);
+
+   background: var(--white);
+   border: none;
+}
+
+#task-create button {
+   width: auto;
+   height: auto;
+
+   padding: .44rem 1.1rem .25rem;
+
+   font: 400 3rem 'Bebas Neue';
+   color: var(--dark);
+   
+   background: var(--se);
+   border: none;
+}
+
+#task-create + div {
+   position: absolute;
+   top: 0;
+   bottom: 0;
+   left: 0;
+   right: 0;
+
+   background: #000;
+
+   opacity: .5;
+
+   z-index: 13;
+
+   cursor: pointer;
+}
+
+/* JS Stuff */
+
+.invisible {
+   display: none !important;
+}
+
+/* Create Slider */
+
+.create-opened {
+   transform: translateX(0%) !important;
+}
+
+/* Add Task & Column */
+
+.tasks > button:hover, #create > .submit:hover, #task-create > button:hover {
+   transition: .15s;
+   color: var(--white); 
+}
+
+/* Dragging */
+
+.task.dragging:where(h2, button) {
+   opacity: 0;
+}
+
+/* Accessories */
+
+#theme-change, #color-change {
+   width: 3rem;
+   height: 3rem;
+
+   border-radius: .5rem;
+
+   position: absolute;
+   top: 1rem;
+   right: 1rem;
+
+   padding: .3rem;
+
+   background: var(--white);
+
+   cursor: pointer;
+   user-select: none;
+}
+
+#theme-change svg, #color-change svg {
+   width: 2.4rem;
+   height: 2.4rem;
+}
+
+#theme-change {
+   right: 4.5rem;
+}
+
+/* SVGs */
+
+.vari-color {
+   fill: var(--darker);
+}
+
+.vari-color1 {
+   fill: var(--white);
+}
+
+.vari-color2 {
+   fill: var(--se);
+}
